@@ -1,6 +1,6 @@
 var assert =  require("assert");
 var Rat = require("../rat");
-var rat = new Rat("Bertie");
+var rat = new Rat("Bertie", 50, 10);
 var Food = require("../food");
 var pie = new Food("pie", 10);
 
@@ -14,6 +14,6 @@ describe("rat", function(){
     assert.equal("I am touching the pie", rat.touch(pie));
   });
 
-  
+
 
 });

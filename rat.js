@@ -1,4 +1,4 @@
-var Rat = function(name){
+var Rat = function(name, health, strength){
   this.name = name; 
 };
 

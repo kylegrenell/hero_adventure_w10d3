@@ -3,7 +3,7 @@ var Food = require("../food");
 var pie = new Food("pie", 10);
 var coffee = new Food("coffee", 20);
 var Rat = require("../rat");
-var rat = new Rat("Bertie");
+var rat = new Rat("Bertie", 50, 10);
 
 describe("food", function(){
 
