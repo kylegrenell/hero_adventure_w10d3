@@ -1,66 +1,69 @@
 var assert =  require("assert");
-var Hero = require("../nemesis");
-var kyle = new Hero("Kyle", 100, 10, "decaf coffee");
-var myHero = new Hero("Euan", 100, 10, "coffee");
+var Nemesis = require("../nemesis");
+var Hero = require("../hero");
 var Rat = require("../rat");
-var rat = new Rat("Bertie", 50, 10);
 var Food = require("../food");
+
+var myNemesis = new Nemesis("Kyle", 100, 10, "decaf coffee");
+var myHero = new Hero("Euan", 100, 10, "coffee");
+var rat = new Rat("Bertie", 50, 10);
 var pie = new Food("pie", 10);
 var coffee = new Food("coffee", 20);
 var decafCoffee = new Food("decaf coffee", 20);
 
+
 describe("nemesis", function(){
 
   beforeEach( function() {
-    kyle.health = 100;
+    myNemesis.health = 100;
   })
   it("Nemesis should have a name", function(){
-    assert.equal("Kyle", kyle.name);
+    assert.equal("Kyle", myNemesis.name);
   });
 
   it("Nemesis should start with full health", function(){
-    assert.equal(100, kyle.health);
+    assert.equal(100, myNemesis.health);
   });
 
   it("Nemesis has favorite food", function(){
-    assert.equal("decaf coffee", kyle.favouriteFood);
+    assert.equal("decaf coffee", myNemesis.favouriteFood);
   });
 
   it("Nemesis should be able to talk", function(){
-    assert.equal("It's me, your nemesis Kyle", kyle.talk());
+    assert.equal("It's me, your nemesis Kyle", myNemesis.talk());
   });
   
   it("Nemesis should be able to eat food", function(){
-    assert.equal("I am eating pie", kyle.eat(pie) )
+    assert.equal("I am eating pie", myNemesis.eat(pie) )
   });
 
   it("Food should increase nemisis health", function(){
-    kyle.eat(pie);
-    assert.equal(110, kyle.health);
+    myNemesis.eat(pie);
+    assert.equal(110, myNemesis.health);
   });
 
   it("Favorite food should increase health by 1.5 times standard replenishment value", function(){
-    kyle.eat(decafCoffee);
-    assert.equal(130, kyle.health);
+    myNemesis.eat(decafCoffee);
+    assert.equal(130, myNemesis.health);
   });
 
   it("Nemesis should lose health if eats poisoned food", function(){
     rat.touch(pie);
-    kyle.eat(pie);
-    assert.equal(90, kyle.health);
+    myNemesis.eat(pie);
+    assert.equal(90, myNemesis.health);
   });
 
   it("Nemesis can fight", function(){
-    assert.equal("Take this.. and this... ", kyle.fight(rat));
+    assert.equal("Take this.. and this... ", myNemesis.fight(rat));
   });
 
   it("Nemesis health should decreased when rat fights", function(){
-    rat.fight(kyle);
-    assert.equal(90, kyle.health);
+    rat.fight(myNemesis);
+    assert.equal(90, myNemesis.health);
   })
 
   it("Nemesis should be able to fight hero", function(){
-    kyle.fight(myHero);
+    myNemesis.fight(myHero);
     assert.equal(90, myHero.health);
   })
 

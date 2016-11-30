@@ -1,11 +1,16 @@
 var assert =  require("assert");
 var Hero = require("../hero");
-var myHero = new Hero("Euan", 100, 10, "coffee");
-var Rat = require("../rat");
-var rat = new Rat("Bertie", 50, 10);
+var Nemesis = require("../nemesis");
 var Food = require("../food");
+var Rat = require("../rat");
+
+var myHero = new Hero("Euan", 100, 10, "coffee");
+var rat = new Rat("Bertie", 50, 10);
 var pie = new Food("pie", 10);
 var coffee = new Food("coffee", 20);
+var decafCoffee = new Food("decaf coffee", 20);
+var kyle = new Nemesis("Kyle", 100, 10, "decaf coffee");
+
 
 describe("hero", function(){
 
@@ -55,8 +60,12 @@ describe("hero", function(){
   it("Heros health should decreased when rat fights", function(){
     rat.fight(myHero);
     assert.equal(90, myHero.health);
-  })
+  });
 
+  it("Hero should be able to fight the nemesis", function(){
+    myHero.fight(kyle);
+    assert.equal(90, kyle.health);
+  });
 
 
 });
