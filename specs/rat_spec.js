@@ -23,7 +23,7 @@ describe("rat", function(){
 
   it("The rat can fight", function(){
     assert.equal("I am fighting", rat.fight(myHero));
-  })
+  });
 
 
 
