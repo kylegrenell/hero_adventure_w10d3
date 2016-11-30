@@ -5,7 +5,6 @@ var Food = require("../food");
 var pie = new Food("pie", 10);
 var coffee = new Food("coffee", 20);
 
-
 describe("hero", function(){
 
   beforeEach( function() {

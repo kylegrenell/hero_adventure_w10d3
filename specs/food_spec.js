@@ -13,5 +13,9 @@ describe("food", function(){
     assert.equal(20, coffee.value);
   });
 
+  it("Food should not be poisoned if not touched by rat", function(){
+    assert.equal(false, pie.poisoned);
+  });
+
 
 });
