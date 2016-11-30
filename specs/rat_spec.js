@@ -19,6 +19,10 @@ describe("rat", function(){
   it("The rats health should decrease by the heros strength when fighting", function(){
     myHero.fight(rat);
     assert.equal(40, rat.health);
+  });
+
+  it("The rat can fight", function(){
+    assert.equal("I am fighting", rat.fight(myHero));
   })
 
 

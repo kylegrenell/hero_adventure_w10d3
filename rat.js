@@ -9,7 +9,14 @@ Rat.prototype = {
     var ratSpeak = "I am touching the " + food.name;
     food.poisoned = true;
     return ratSpeak;
+  },
+
+  fight: function( opponent ){
+    var fighting = "I am fighting";
+    opponent.health -= this.strength;
+    return fighting;
   }
+
 };
 
 module.exports = Rat;
