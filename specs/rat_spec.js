@@ -10,4 +10,8 @@ describe("rat", function(){
     assert.equal("Bertie", rat.name);
   });
 
+  it("The rat should be able to touch the food", function(){
+    assert.equal("I am touching the pie", rat.touch(pie));
+  });
+
 });

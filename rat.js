@@ -3,7 +3,7 @@ var Rat = function(name){
 };
 
 Rat.prototype = {
-  poison: function( food ){
+  touch: function( food ){
     var ratSpeak = "I am touching the " + food.name;
     return ratSpeak;
   }
