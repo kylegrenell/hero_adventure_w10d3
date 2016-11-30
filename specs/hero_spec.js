@@ -1,6 +1,8 @@
 var assert =  require("assert");
 var Hero = require("../hero");
 var myHero = new Hero("Euan", 100, "coffee");
+var Rat = require("../rat");
+var rat = new Rat("Bertie");
 var Food = require("../food");
 var pie = new Food("pie", 10);
 var coffee = new Food("coffee", 20);
@@ -38,6 +40,12 @@ describe("hero", function(){
   it("Favorite food should increase health by 1.5 times standard replenishment value", function(){
     myHero.eat(coffee);
     assert.equal(130, myHero.health);
+  });
+
+  it("Hero should lose health if eats poisoned food", function(){
+    rat.touch(pie);
+    myHero.eat(pie);
+    assert.equal(90, myHero.health);
   })
 
 

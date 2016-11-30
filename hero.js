@@ -13,11 +13,15 @@ Hero.prototype = {
   },
   eat: function(food){
     var eating = "I am eating " + food.name;
-    if(food.name === this.favouriteFood){
-      this.health += (food.value * 1.5);
+    if(food.poisoned === true){
+      this.health -= food.value;
+    } else {
+      if(food.name === this.favouriteFood){
+        this.health += (food.value * 1.5);
       } else {
-      this.health += food.value;
+        this.health += food.value;
       }
+    }
     return eating;
   }
 };
