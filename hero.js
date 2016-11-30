@@ -1,5 +1,3 @@
-
-// constructor
 var Hero = function(name, health, strength, favouriteFood){
   this.name = name;
   this.health = health;
@@ -32,8 +30,7 @@ Hero.prototype = {
     opponent.health -= this.strength;
     return fighting;
   }
+  
 };
-
-
 
 module.exports = Hero;
