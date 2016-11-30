@@ -25,7 +25,4 @@ describe("rat", function(){
     assert.equal("I am fighting", rat.fight(myHero));
   });
 
-
-
-
 });
