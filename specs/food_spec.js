@@ -2,6 +2,8 @@ var assert =  require("assert");
 var Food = require("../food");
 var pie = new Food("pie", 10);
 var coffee = new Food("coffee", 20);
+var Rat = require("../rat");
+var rat = new Rat("Bertie");
 
 describe("food", function(){
 
@@ -17,5 +19,9 @@ describe("food", function(){
     assert.equal(false, pie.poisoned);
   });
 
+  it("The food should be poisoned when touched by the rat", function(){
+    rat.touch(pie);
+    assert.equal(true, pie.poisoned);
+  });
 
 });
