@@ -25,6 +25,12 @@ Nemesis.prototype = {
     return eating;
   },
 
+  touch: function( food ){
+    var decaf = "I am replacing the coffee with decaf (muahahahaha) " + food.name;
+    food.decaffed = true;
+    return decaf;
+  },
+
   fight: function( opponent ){
     var fighting = "Take this.. and this... ";
     opponent.health -= this.strength;

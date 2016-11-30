@@ -1,9 +1,16 @@
 var assert =  require("assert");
+
+var Nemesis = require("../nemesis");
+var Hero = require("../hero");
+var Rat = require("../rat");
 var Food = require("../food");
+
+var myNemesis = new Nemesis("Kyle", 100, 10, "decaf coffee");
+var myHero = new Hero("Euan", 100, 10, "coffee");
 var pie = new Food("pie", 10);
 var coffee = new Food("coffee", 20);
-var Rat = require("../rat");
 var rat = new Rat("Bertie", 50, 10);
+var decafCoffee = new Food("decaf coffee", 20);
 
 describe("food", function(){
 
@@ -22,6 +29,13 @@ describe("food", function(){
   it("The food should be poisoned when touched by the rat", function(){
     rat.touch(pie);
     assert.equal(true, pie.poisoned);
+  });
+
+  it("Nemesis can replace heros coffee with decaf", function(){
+    console.log(coffee.decaffed); // false
+    myNemesis.touch(coffee);
+    console.log(coffee.decaffed); // true
+    assert.equal(true, coffee.decaffed);
   });
 
 });

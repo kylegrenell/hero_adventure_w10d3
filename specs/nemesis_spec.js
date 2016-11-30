@@ -60,12 +60,12 @@ describe("nemesis", function(){
   it("Nemesis health should decreased when rat fights", function(){
     rat.fight(myNemesis);
     assert.equal(90, myNemesis.health);
-  })
+  });
 
   it("Nemesis should be able to fight hero", function(){
     myNemesis.fight(myHero);
     assert.equal(90, myHero.health);
-  })
+  });
 
 
 });
